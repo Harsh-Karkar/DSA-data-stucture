@@ -4,7 +4,7 @@
 
 int a[n],i,j,temp;
 
-int selectionsort(int a[] )
+int selectionsort()
 {
     for(i=0; i< n ; i++)
     {
@@ -34,7 +34,7 @@ int main()
     }
 
 
-    selectionsort( a );
+    selectionsort();
 
     printf("\n\n Sorted array element is : ");
     for ( i = 0; i < n; i++)
