@@ -191,8 +191,8 @@ int main()
     {
         printf("1. Insert at the end\n");
         printf("2. Delete from the end\n");
-        printf("3. Insert at the beginning\n");
-        printf("4. Delete from the beginning\n");
+        printf("3. Insert at the start\n");
+        printf("4. Delete from the start\n");
         printf("5. Insert in the middle\n");
         printf("6. Delete from the middle\n");
         printf("7. Display the list\n");

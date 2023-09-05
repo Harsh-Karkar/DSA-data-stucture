@@ -89,6 +89,43 @@ void deleteFirst()
     }
     free(p);
 }
+void midinsert(int val , int pos)
+{
+    struct node *ptr = head;
+    struct node *temp = malloc(sizeof(struct node));
+
+    temp->data = val;
+    temp->next = NULL;
+     if (head == NULL)
+    {
+        head = temp;
+        return;
+    }
+
+    while (ptr->data != pos)
+    {
+        ptr = ptr->next;
+    }
+    temp->next = ptr->next;
+    ptr->next = temp;
+    
+}
+
+void deletemid(int pos)
+{
+    struct node *ptr = head;
+    struct node *p ;
+
+    
+    while (ptr->data != pos)
+    {
+        p = ptr;
+        ptr = ptr->next;
+    }
+    p->next = ptr->next;
+    free(ptr);
+    
+}
 
 void display()
 {
@@ -120,8 +157,8 @@ int main()
         printf("2. Delete from the end\n");
         printf("3. Insert at the first\n");
         printf("4. Delete at the first\n");
-        // printf("5. insert mid \n");
-        // printf("6. Delete at the middle \n");
+        printf("5. insert mid \n");
+        printf("6. Delete at the middle \n");
         printf("7. Display the list\n");
         printf("8. Exit\n");
         printf("Enter your choice: ");
@@ -145,17 +182,17 @@ int main()
         case 4:
             deleteFirst();
             break;
-        // case 5:
-        // printf("Enter a value to insert : ");
-        // scanf("%d",&value);
-        // printf("enter a position : ");
-        // scanf("%d",&pos);
-        // midinsert(value,pos);
-        // break;
-        // case 6:
-        // printf("enter a position : ");
-        // scanf("%d",&pos);
-        // deletemid(pos);
+        case 5:
+        printf("Enter a value to insert : ");
+        scanf("%d",&value);
+        printf("enter a position : ");
+        scanf("%d",&pos);
+        midinsert(value,pos);
+        break;
+        case 6:
+        printf("enter a position : ");
+        scanf("%d",&pos);
+        deletemid(pos);
         case 7:
             display();
             break;
